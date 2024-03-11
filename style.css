@@ -1,0 +1,28 @@
+body {
+    background-color: rgb(104, 126, 149);
+}
+.text {
+    margin-left: 10%;
+    font-family: "Lucida Console";
+    color: rgb(50, 50, 50);
+ }
+ #title {
+    margin-top: 5%;
+ }
+ #glink {
+    margin-left: 10%;
+    font-family: "Lucida Console";
+    color: rgb(50, 50, 50);
+    text-decoration: none;
+ }
+ #button {
+    background-color: rgb(50, 50, 50);
+    color: white;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+ }
+ .menu {
+    position: absolute;
+    background-color: rgb(79, 95, 112);
+ }
