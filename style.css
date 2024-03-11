@@ -1,28 +1,46 @@
-body {
-    background-color: rgb(104, 126, 149);
+* {
+    font-family: "Lucida Console";
 }
-.text {
-    margin-left: 10%;
-    font-family: "Lucida Console";
-    color: rgb(50, 50, 50);
- }
- #title {
-    margin-top: 5%;
- }
- #glink {
-    margin-left: 10%;
-    font-family: "Lucida Console";
-    color: rgb(50, 50, 50);
-    text-decoration: none;
- }
- #button {
+
+body {
+    background-color: rgb(89, 89, 118);
+  }
+  
+  #text {
     background-color: rgb(50, 50, 50);
     color: white;
+    padding: 10px;
+  }
+  
+  #game {
+    max-width: 500px;
+    max-height: 400px;
+    background-color: lightgray;
+    color: white;
+    margin: 0 auto;
+    padding: 10px;
+  }
+  
+  #controls {
+    background-color: rgb(75, 75, 75);
+    border: 1px black solid;
     padding: 5px;
-    border: none;
-    cursor: pointer;
- }
- .menu {
-    position: absolute;
-    background-color: rgb(79, 95, 112);
- }
+  }
+  
+  #stats {
+    border: 1px black solid;
+    color: black;
+    padding: 5px;
+  }
+  
+  #monsterStats {
+    display: none;
+    border: 1px black solid;
+    color: white;
+    padding: 5px;
+    background-color: red;
+  }
+  
+  .stat {
+    padding-right: 10px;
+  }
