@@ -2,8 +2,8 @@ let xp = 0;
 let health = 100;
 let gold = 50;
 let currentWeapon = 0;
-let fighting;
-let monterHealth;
+let fighting = 3;
+let monsterHealth;
 let inventory = ["stick"];
 
 const button1 = document.querySelector("#button1");
@@ -16,6 +16,30 @@ const goldText = document.querySelector("#goldText");
 const monsterStats = document.querySelector("#monsterStats");
 const monsterNameText = document.querySelector("#monsterName");
 const monsterHealthText = document.querySelector("#monsterHealth");
+
+
+const monsters = [
+    {
+        name: "slime",
+        level: 2,
+        health: 15
+    },
+    {
+        name: "fanged beast",
+        level: 8,
+        health: 60
+    },
+    {
+        name: "dragon",
+        level: 20,
+        health: 300
+    },
+    {
+        name: "noone",
+        level: 0,
+        health: 100
+    }
+]
 
 const weapons = [
     {
@@ -80,24 +104,6 @@ const locations = [
         "text": "You defeat the dragon! You win the game :))"
     }
 ];
-
-const monsters = [
-    {
-        name: "slime",
-        level: 2,
-        health: 15
-    },
-    {
-        name: "fanged beast",
-        level: 8,
-        health: 60
-    },
-    {
-        name: "dragon",
-        level: 20,
-        health: 300
-    }
-]
 
 button1.onclick = goStore;
 button2.onclick = goCave;
@@ -173,11 +179,10 @@ function sellWeapon(){
 
 function goFight(){
     update(locations[3]);
-    monterHealth = monsters[fighting].health;
+    monsterHealth = monsters[fighting].health;
     monsterStats.style.display = "block";
     monsterNameText.innerText = monsters[fighting].name;
-    monsterHealthText.innerText = monsterHealth;
-
+    monsterHealthText.innerText = monsters[fighting].health;
 }
 
 function attack(){
@@ -186,7 +191,7 @@ function attack(){
     health -= monsters[fighting].level;
     monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
     healthText.innerText = health;
-    monsterHealthText = monterHealth;
+    monsterHealthText.innerText = monsterHealth;
     if(health <= 0) lose();
     else{
         if(monsterHealth <= 0){
@@ -214,10 +219,11 @@ function restart(){
     gold = 50;
     currentWeapon = 0;
     inventory = ["stick"];
+    fighting = 3;
     goldText.innerText = gold;
     healthText.innerText = health;
     xpText.innerText = xp;
-    goTown;
+    goTown();
 }
 
 function defeatMonster(){
